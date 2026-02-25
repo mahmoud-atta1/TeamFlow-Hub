@@ -1,17 +1,16 @@
-# 🚀 TeamFlow Hub - Backend API
-
 <div align="center">
+
+# 🚀 TeamFlow Hub - Backend API
 
 ![Node.js](https://img.shields.io/badge/Node.js-18.x-green)
 ![Express](https://img.shields.io/badge/Express-4.x-blue)
 ![MongoDB](https://img.shields.io/badge/MongoDB-6.x-brightgreen)
 ![Socket.IO](https://img.shields.io/badge/Socket.IO-4.x-black)
 ![JWT](https://img.shields.io/badge/JWT-Auth-orange)
-![License](https://img.shields.io/badge/License-MIT-yellow)
 
 **A comprehensive Task Management System with role-based access control and real-time notifications**
 
-[Features](#-features) • [Tech Stack](#-tech-stack) • [Installation](#-installation) • [API Documentation](#-api-documentation) • [Real-time Events](#-real-time-events)
+[Features](#-features) • [Tech Stack](#-tech-stack) • [Installation](#-installation) • [API Documentation](#-api-documentation) • [Postman Collection](#-postman-collection) • [Real-time Events](#-real-time-events)
 
 </div>
 
@@ -450,6 +449,23 @@ socket.emit('join', { userId: currentUser._id });
 
 ---
 
+## 📮 Postman Collection
+
+Complete API documentation and testing collection available on Postman:
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://documenter.getpostman.com/view/51642188/2sBXcGEfea)
+
+**Postman Documentation**: [View Full API Docs](https://documenter.getpostman.com/view/51642188/2sBXcGEfea)
+
+This collection includes:
+- ✅ All API endpoints with examples
+- ✅ Pre-configured environment variables
+- ✅ Request/Response examples
+- ✅ Authentication setup
+- ✅ Ready-to-use test requests
+
+---
+
 ## 🧪 Testing
 
 ### Using Postman/Insomnia
@@ -554,27 +570,11 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
 ## 👨‍💻 Author
 
 **Mahmoud Atta**
 
 - GitHub: [@mahmoud-atta1](https://github.com/mahmoud-atta1)
-- Email: your-email@example.com
-
----
-
-## 🙏 Acknowledgments
-
-- Express.js community for excellent middleware
-- MongoDB team for powerful database
-- Socket.IO for real-time capabilities
-- All contributors and testers
 
 ---
 
