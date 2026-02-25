@@ -41,6 +41,20 @@ exports.createTask = asyncHandler(async (req, res, next) => {
     priority: task.priority,
   });
 
+  if (assignedTo && String(assignedTo) !== String(team.teamLead)) {
+    await createNotification({
+      userId: assignedTo,
+      type: "taskAssigned",
+      referenceId: task._id,
+    });
+
+    emitToUser(assignedTo, "taskAssigned", {
+      _id: task._id,
+      title: task.title,
+      priority: task.priority,
+    });
+  }
+
   res.status(201).json({
     success: true,
     data: task,
