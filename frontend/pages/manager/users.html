@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management | TeamFlow Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">TeamFlow Hub</div>
+        <nav>
+          <a data-nav-link href="dashboard.html">Dashboard</a>
+          <a data-nav-link href="teams.html">Teams</a>
+          <a data-nav-link href="tasks.html">Tasks</a>
+          <a data-nav-link href="users.html">Users</a>
+          <a data-nav-link href="../shared/profile.html">Profile</a>
+          <a data-nav-link href="../shared/notifications.html">Notifications</a>
+          <a href="#" data-action="logout">Logout</a>
+        </nav>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <h2>Users</h2>
+          <div class="topbar-right">
+            <a class="notification-link" aria-label="Notifications" href="../shared/notifications.html">
+              Notifications
+              <span class="count-pill" data-notification-count>0</span>
+            </a>
+            <div class="user-chip">
+              <img data-current-avatar src="https://placehold.co/40x40" alt="avatar" />
+              <div><strong data-current-user>-</strong><div data-current-role>-</div></div>
+            </div>
+          </div>
+        </header>
+
+        <article class="card">
+          <div class="section-head">
+            <h3>User Directory</h3>
+            <select id="user-status-filter">
+              <option value="">All</option>
+              <option value="pending">Pending</option>
+              <option value="approved">Approved</option>
+              <option value="rejected">Rejected</option>
+            </select>
+          </div>
+          <p class="muted-note">Review approvals, roles, and account status from one place.</p>
+
+          <div class="table-shell">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="users-table-body"></tbody>
+            </table>
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <script src="../../js/config.js"></script>
+    <script src="../../js/utils.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="../../js/socket.js"></script>
+    <script src="../../js/notifications.js"></script>
+    <script src="../../js/users.js"></script>
+    <script>
+      window.TeamFlow.users.initUsersPage();
+    </script>
+  </body>
+</html>
+

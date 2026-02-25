@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Team | TeamFlow Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/teams.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">TeamFlow Hub</div>
+        <nav>
+          <a data-nav-link href="dashboard.html">Dashboard</a>
+          <a data-nav-link href="tasks.html">Tasks</a>
+          <a data-nav-link href="team.html">My Team</a>
+          <a data-nav-link href="../shared/profile.html">Profile</a>
+          <a data-nav-link href="../shared/notifications.html">Notifications</a>
+          <a href="#" data-action="logout">Logout</a>
+        </nav>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <h2>Team Members</h2>
+          <div class="topbar-right">
+            <a class="notification-link" aria-label="Notifications" href="../shared/notifications.html">
+              Notifications
+              <span class="count-pill" data-notification-count>0</span>
+            </a>
+            <div class="user-chip">
+              <img data-current-avatar src="https://placehold.co/40x40" alt="avatar" />
+              <div><strong data-current-user>-</strong><div data-current-role>-</div></div>
+            </div>
+          </div>
+        </header>
+
+        <article class="card team-main-card table-card-full">
+          <div class="section-head section-head-wrap">
+            <div>
+              <h3>My Team</h3>
+              <p class="muted-note">Manage members using direct selection instead of manual user IDs.</p>
+            </div>
+          </div>
+          <div class="table-shell">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Team Lead</th>
+                  <th>Members</th>
+                  <th>Team ID</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="teams-table-body"></tbody>
+            </table>
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <script src="../../js/config.js"></script>
+    <script src="../../js/utils.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="../../js/socket.js"></script>
+    <script src="../../js/notifications.js"></script>
+    <script src="../../js/teams.js"></script>
+    <script>
+      window.TeamFlow.teams.init("team-lead");
+    </script>
+  </body>
+</html>
+

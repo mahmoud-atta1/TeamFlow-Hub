@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Developer Dashboard | TeamFlow Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/dashboard.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">TeamFlow Hub</div>
+        <nav>
+          <a data-nav-link href="dashboard.html">Dashboard</a>
+          <a data-nav-link href="my-tasks.html">My Tasks</a>
+          <a data-nav-link href="../shared/profile.html">Profile</a>
+          <a data-nav-link href="../shared/notifications.html">Notifications</a>
+          <a href="#" data-action="logout">Logout</a>
+        </nav>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <h2>Developer Dashboard</h2>
+          <div class="topbar-right">
+            <a class="notification-link" aria-label="Notifications" href="../shared/notifications.html">
+              Notifications
+              <span class="count-pill" data-notification-count>0</span>
+            </a>
+            <div class="user-chip">
+              <img data-current-avatar src="https://placehold.co/40x40" alt="avatar" />
+              <div><strong data-current-user>-</strong><div data-current-role>-</div></div>
+            </div>
+          </div>
+        </header>
+
+        <section class="grid grid-4">
+          <article class="card metric-card">
+            <h4>Total Tasks</h4>
+            <div class="value" data-metric="totalTasks">0</div>
+          </article>
+          <article class="card metric-card">
+            <h4>Done</h4>
+            <div class="value" data-metric="done">0</div>
+          </article>
+          <article class="card metric-card">
+            <h4>Pending</h4>
+            <div class="value" data-metric="pending">0</div>
+          </article>
+          <article class="card metric-card">
+            <h4>Unread Alerts</h4>
+            <div class="value" data-metric="unreadNotifications">0</div>
+          </article>
+        </section>
+
+        <section class="dashboard-welcome card">
+          <div>
+            <p class="dashboard-kicker">Personal Workspace</p>
+            <h3>Overview</h3>
+            <p>Focus on assigned tasks, status flow, and unread notifications.</p>
+            <ul class="dashboard-points">
+              <li>Move task status step-by-step with clear state control.</li>
+              <li>Open full task details and keep progress visible to the team.</li>
+            </ul>
+          </div>
+          <div class="dashboard-welcome-side">
+            <div class="dashboard-mini">
+              <strong>My Queue</strong>
+              <span>All assigned tasks with search and priority filters.</span>
+            </div>
+            <div class="dashboard-mini">
+              <strong>Status Discipline</strong>
+              <span>Follow todo to in-progress to done without skipping.</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="quick-grid quick-grid-spaced">
+          <article class="card">
+            <h4>Open Assigned Tasks</h4>
+            <a class="btn btn-primary" href="my-tasks.html">Go to Tasks</a>
+          </article>
+          <article class="card">
+            <h4>Check Notifications</h4>
+            <a class="btn btn-primary" href="../shared/notifications.html">Open Notifications</a>
+          </article>
+          <article class="card">
+            <h4>Edit Profile</h4>
+            <a class="btn btn-primary" href="../shared/profile.html">Open Profile</a>
+          </article>
+        </section>
+
+        <section class="dash-story-grid">
+          <article class="story-card">
+            <h4>One Task At A Time</h4>
+            <p>Start with the highest impact task and keep context switching low.</p>
+          </article>
+          <article class="story-card">
+            <h4>Update Early</h4>
+            <p>Status updates help your lead and manager unblock work quickly.</p>
+          </article>
+          <article class="story-card">
+            <h4>Finish Strong</h4>
+            <p>Small daily progress creates reliable end-of-week delivery.</p>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="../../js/config.js"></script>
+    <script src="../../js/utils.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="../../js/socket.js"></script>
+    <script src="../../js/notifications.js"></script>
+    <script src="../../js/dashboard.js"></script>
+    <script>
+      window.TeamFlow.dashboard.init("developer");
+    </script>
+  </body>
+</html>
+

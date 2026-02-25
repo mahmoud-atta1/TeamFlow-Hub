@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TeamFlow Hub | Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/auth.css" />
+  </head>
+  <body class="auth-page">
+    <main class="auth-shell">
+      <section class="auth-brand-panel">
+        <p class="auth-eyebrow">Create Your Workspace Access</p>
+        <h1>Join TeamFlow Hub</h1>
+        <p class="auth-description">
+          Register once, then wait for manager approval to access your role dashboard.
+        </p>
+        <p class="auth-description">
+          After approval, tasks and notifications are synced in one clear workflow.
+        </p>
+        <ul class="auth-feature-list">
+          <li><strong>Fast onboarding:</strong> Simple registration and secure login flow.</li>
+          <li><strong>Role access:</strong> Each role sees exactly what they need.</li>
+          <li><strong>Live updates:</strong> Bell notifications and realtime task updates.</li>
+        </ul>
+        <div class="auth-brand-actions">
+          <a class="btn btn-ghost" href="./index.html">Back to Login</a>
+        </div>
+      </section>
+
+      <section class="auth-card auth-form-panel">
+        <h2>Register</h2>
+        <p>Create your account now. Manager approval is required before login.</p>
+
+        <form id="register-form" class="grid" autocomplete="on">
+          <label class="form-control">
+            Name
+            <input type="text" name="name" required minlength="3" />
+          </label>
+
+          <label class="form-control">
+            Email
+            <input type="email" name="email" required />
+          </label>
+
+          <label class="form-control">
+            Password
+            <input type="password" name="password" required minlength="6" />
+          </label>
+
+          <div class="auth-actions">
+            <a class="auth-link" href="./index.html">Back to login</a>
+            <button class="btn btn-primary" type="submit">Register</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer class="auth-footer">
+      <small>TeamFlow Hub keeps roles and responsibilities aligned.</small>
+    </footer>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/auth.js"></script>
+    <script>
+      window.TeamFlow.auth.initRegisterPage();
+    </script>
+  </body>
+</html>

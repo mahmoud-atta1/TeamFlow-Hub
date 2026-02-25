@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Tasks | TeamFlow Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/tasks.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">TeamFlow Hub</div>
+        <nav>
+          <a data-nav-link href="dashboard.html">Dashboard</a>
+          <a data-nav-link href="my-tasks.html">My Tasks</a>
+          <a data-nav-link href="../shared/profile.html">Profile</a>
+          <a data-nav-link href="../shared/notifications.html">Notifications</a>
+          <a href="#" data-action="logout">Logout</a>
+        </nav>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <h2>Assigned Tasks</h2>
+          <div class="topbar-right">
+            <a class="notification-link" aria-label="Notifications" href="../shared/notifications.html">
+              Notifications
+              <span class="count-pill" data-notification-count>0</span>
+            </a>
+            <div class="user-chip">
+              <img data-current-avatar src="https://placehold.co/40x40" alt="avatar" />
+              <div><strong data-current-user>-</strong><div data-current-role>-</div></div>
+            </div>
+          </div>
+        </header>
+
+        <article class="card task-table-card">
+          <div class="section-head">
+            <h3>My Active Work</h3>
+          </div>
+          <p class="muted-note">Track assigned tasks and move status step by step.</p>
+          <div class="task-filters-wrap">
+            <div class="filters">
+              <input id="task-search" type="text" placeholder="Search by title" />
+              <select id="task-status-filter">
+                <option value="">All Status</option>
+                <option value="todo">Todo</option>
+                <option value="in-progress">In Progress</option>
+                <option value="done">Done</option>
+              </select>
+              <select id="task-priority-filter">
+                <option value="">All Priority</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+              <select id="task-team-filter">
+                <option value="">All Teams</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="table-shell">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Team</th>
+                  <th>Priority</th>
+                  <th>Status</th>
+                  <th>Created By</th>
+                  <th>Assigned To</th>
+                  <th>Type</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="tasks-table-body"></tbody>
+            </table>
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <script src="../../js/config.js"></script>
+    <script src="../../js/utils.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="../../js/socket.js"></script>
+    <script src="../../js/notifications.js"></script>
+    <script src="../../js/tasks.js"></script>
+    <script>
+      window.TeamFlow.tasks.init("developer");
+    </script>
+  </body>
+</html>
+
