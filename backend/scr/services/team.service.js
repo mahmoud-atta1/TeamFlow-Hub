@@ -33,13 +33,18 @@ exports.createTeam = asyncHandler(async (req, res, next) => {
 exports.getTeams = asyncHandler(async (req, res) => {
   let filter = { isActive: true };
 
-  if (req.user.role === "team-lead" || req.user.role === "developer") {
+  if (req.user.role === "team-lead") {
+    filter.$or = [
+      { teamLead: req.user._id },
+      { teamMembers: { $in: [req.user._id] } },
+    ];
+  } else if (req.user.role === "developer") {
     filter.teamMembers = { $in: [req.user._id] };
   }
 
   const teams = await Team.find(filter)
-    .populate("teamLead", "name email")
-    .populate("teamMembers", "name email");
+    .populate("teamLead", "name email role")
+    .populate("teamMembers", "name email role status");
 
   res.status(200).json({
     success: true,
