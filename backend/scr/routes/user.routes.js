@@ -41,7 +41,7 @@ router.patch(
 router.patch("/change-password", changePasswordValidator, changePassword);
 
 //@ Manager Routes
-router.get("/", allowedTo("manager"), getUsersValidator, getUsers);
+router.get("/", allowedTo("manager", "team-lead"), getUsersValidator, getUsers);
 router.get(
   "/:id",
   allowedTo("manager", "team-lead"),
