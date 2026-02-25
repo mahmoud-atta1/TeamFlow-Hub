@@ -8,7 +8,12 @@ const ApiError = require("../utils/apiError");
 exports.getUsers = asyncHandler(async (req, res) => {
   let filter = {};
 
-  if (req.query.status) {
+  if (req.user.role === "team-lead") {
+    filter.status = "approved";
+    filter.role = { $ne: "manager" };
+  }
+
+  if (req.query.status && req.user.role === "manager") {
     filter.status = req.query.status;
   }
 
