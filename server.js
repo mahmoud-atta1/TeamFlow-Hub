@@ -16,18 +16,23 @@ const helmet = require("helmet");
 const cors = require("cors");
 const rateLimit = require("express-rate-limit");
 
-app.use(helmet());
+app.use(
+  helmet({
+    crossOriginResourcePolicy: { policy: "cross-origin" },
+  }),
+);
 app.use(cors());
 
 app.use(express.json());
+app.use("/users", express.static("uploads/users"));
 app.use(express.static("uploads"));
 
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
-});
+// const limiter = rateLimit({
+//   windowMs: 15 * 60 * 1000,
+//   max: 100,
+// });
 
-app.use("/api", limiter);
+// app.use("/api", limiter);
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
