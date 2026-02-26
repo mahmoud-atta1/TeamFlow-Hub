@@ -520,7 +520,7 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## 📝 API Response Format
+## 📝 API Response  Format
 
 ### Success Response
 ```json
