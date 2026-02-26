@@ -574,7 +574,7 @@ Contributions are welcome! Please follow these steps:
 
 **Mahmoud Atta**
 
-- GitHub: [@mahmoud-atta1](https://github.com/mahmoud-atta1)
+- GitHub : [@mahmoud-atta1](https://github.com/mahmoud-atta1)
 
 ---
 
