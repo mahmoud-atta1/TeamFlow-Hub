@@ -18,7 +18,7 @@
 
 ## 📋 Overview
 
-**TeamFlow Hub** is a robust backend API for managing teams, tasks, and workflows with three distinct user roles. Built with **Node.js**, **Express**, and **MongoDB**, it provides a complete RESTful API with JWT authentication and real-time notifications via Socket.IO.
+**TeamFlow Hub** is a robust backend API for managing teams, tasks, and workflows with three distinct user roles. Built with **Node.js**, **Express**, and **MongoDB**, it provides a complete RESTful API with JWT authentication and real-time notifications via Socket.IO
 
 ### 👥 User Roles
 
