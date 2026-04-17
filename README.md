@@ -24,7 +24,7 @@
 
 - **Manager**: Creates teams, assigns high-level tasks, manages users
 - **Team Lead**: Breaks down tasks into subtasks, assigns to developers, manages team members
-- **Developer**: Works on assigned tasks, updates status.
+- **Developer**: Works on assigned tasks, updates status
 
 ---
 
