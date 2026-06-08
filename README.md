@@ -175,7 +175,7 @@ JWT_EXPIRES_IN=7d
 MAX_FILE_SIZE=5000000
 ```
 
-4. **Start MongoDB**
+4. **Start MongoDB*
 ```bash
 # Make sure MongoDB is running
 mongod
